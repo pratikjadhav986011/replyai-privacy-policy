@@ -1,154 +1,96 @@
-# Privacy Policy for ReplyAI
+# ReplyAI — Privacy Policy
 
-Last Updated: May 30, 2026
+_Last updated: May 30, 2026_
 
-## Introduction
+ReplyAI is a browser extension that provides AI-powered smart reply
+suggestions for **WhatsApp Web** (`https://web.whatsapp.com`). This policy
+explains exactly what data the extension handles, what is sent off your
+device, and what is not.
 
-ReplyAI is an AI-powered browser extension designed to provide smart reply suggestions for supported messaging platforms such as WhatsApp Web, Telegram Web, and Instagram Web.
+ReplyAI operates **only on WhatsApp Web**. It does not run on, read, or
+request permission for any other website or messaging platform.
 
-This Privacy Policy explains what information ReplyAI processes, how the information is used, and how user privacy is protected.
+## 1. What the extension accesses
 
-By using ReplyAI, you agree to the practices described in this policy.
+When you have a WhatsApp Web conversation open and you ask ReplyAI to
+generate or rewrite a reply, the extension reads, from the currently open
+chat only:
 
----
+- The text of the most recent incoming message.
+- Up to the last 10 messages of the open conversation (text, sender label,
+  and direction) to provide context for the suggestion.
+- Any text you type into the reply box when you ask ReplyAI to rewrite it.
 
-# Information We Process
+ReplyAI does **not** read your contact list, phone number, account
+credentials, media files, or conversations you have not actively opened.
+It does not run in the background when WhatsApp Web is closed.
 
-ReplyAI may temporarily process the following information in order to provide AI-generated smart reply suggestions:
+## 2. What is sent off your device
 
-* Recent chat message text
-* Conversation context required for generating relevant replies
-* User-selected preferences and settings
-* AI response style preferences
-* Limited technical diagnostic information for reliability and debugging
+To generate suggestions, the message text and conversation context described
+above are sent over HTTPS to the ReplyAI backend service:
 
-ReplyAI does NOT collect:
+```
+https://replyai-backend-production-3648.up.railway.app
+```
 
-* Passwords
-* Payment information
-* Banking information
-* Government identification data
-* Browser history outside supported messaging websites
+Along with the message content, the request includes the reply settings you
+choose in the extension (for example: tone, relationship type, personality,
+and any custom instruction you enter). The backend forwards this context to a
+third-party large language model provider to produce reply suggestions, then
+returns the suggestions to your browser.
 
----
+- All transmission uses HTTPS.
+- Requests are made only when you actively trigger a suggestion or rewrite.
+- The extension does not send your data anywhere other than the backend URL
+  listed above.
 
-# How Data Is Used
+## 3. What stays on your device
 
-The processed information is used only for:
+The following is stored **locally** in your browser via `chrome.storage` and
+is **never** transmitted off your device by the extension:
 
-* Generating AI-powered smart reply suggestions
-* Improving response quality and contextual relevance
-* Saving user preferences locally
-* Maintaining extension functionality and reliability
+- Your preferences and settings.
+- Per-contact "memory" and writing-style fingerprint used to tailor
+  suggestions.
+- Local usage analytics (counts of actions taken). These are stored on-device
+  only and are not sent to any server.
+- Recent and favorited replies.
 
-ReplyAI does not sell personal data to advertisers or third parties.
+You can clear locally stored memory at any time from **Settings → Privacy**
+inside the extension.
 
----
+## 4. Permissions
 
-# Backend Processing
+ReplyAI requests the minimum permissions required to function:
 
-ReplyAI communicates securely with a backend service to generate AI responses.
+- **`storage`** — to save your preferences and on-device data described above.
+- **Host access to `https://web.whatsapp.com/*`** — so the extension can run
+  on WhatsApp Web and read the open conversation.
+- **Host access to the backend URL above** — so the extension can request
+  reply suggestions.
 
-Recent message content may be temporarily transmitted to the ReplyAI backend for AI processing. Data transmission is encrypted using HTTPS.
+ReplyAI requests **no** access to other sites, browser tabs, history,
+cookies, downloads, or any sensitive browser API.
 
-ReplyAI does not use user messages for advertising purposes.
+## 5. Data retention
 
----
+Message content is used only to generate the requested suggestions and is not
+used by the extension to build a persistent profile on our servers. Any
+server-side handling of request content by the backend or the underlying
+model provider is limited to producing the response. Locally stored data
+remains on your device until you clear it or remove the extension.
 
-# Data Storage
+## 6. Children
 
-ReplyAI primarily stores user preferences locally within the browser using Chrome Extension Storage APIs.
+ReplyAI is not directed to children under 13 and should not be used by them.
 
-Examples of locally stored information may include:
+## 7. Changes
 
-* Selected AI tone/style
-* Extension settings
-* Temporary conversation memory
-* User customization preferences
+If this policy changes, the "Last updated" date above will be revised and the
+updated policy will be published alongside the extension listing.
 
----
+## 8. Contact
 
-# Data Retention
-
-ReplyAI does not permanently store personal chat messages on its servers.
-
-Some temporary processing data may be briefly cached for performance, debugging, abuse prevention, or reliability purposes and is automatically cleared after a limited period.
-
----
-
-# Permissions Used
-
-ReplyAI uses the following Chrome extension permissions:
-
-## storage
-
-Used to save user preferences and extension settings locally in the browser.
-
-## Host Permissions
-
-ReplyAI requests access only to supported messaging websites in order to provide smart reply functionality directly inside those web applications.
-
-Examples may include:
-
-* [https://web.whatsapp.com/](https://web.whatsapp.com/)
-* [https://web.telegram.org/](https://web.telegram.org/)
-* [https://instagram.com/](https://instagram.com/)
-* [https://www.instagram.com/](https://www.instagram.com/)
-
----
-
-# Third-Party Services
-
-ReplyAI may use third-party infrastructure providers, hosting platforms, or AI providers to deliver functionality.
-
-These services may process temporary request data solely for providing ReplyAI functionality.
-
----
-
-# Security
-
-ReplyAI takes reasonable measures to protect user information, including:
-
-* HTTPS encrypted communication
-* Restricted extension permissions
-* Local browser storage for preferences
-* No remote code execution
-* No hidden background tracking
-
-However, no internet-based service can guarantee absolute security.
-
----
-
-# Children's Privacy
-
-ReplyAI is not intended for children under the age of 13.
-
----
-
-# Changes to This Policy
-
-This Privacy Policy may be updated periodically to reflect improvements, legal requirements, or service changes.
-
-Updated versions will be published at the official policy URL.
-
----
-
-# Contact
-
-If you have questions about this Privacy Policy or ReplyAI, you may contact:
-
-Email: [pratikjadhav986011@gmail.com](mailto:pratikjadhav986011@gmail.com)
-
----
-
-# Chrome Web Store Compliance
-
-ReplyAI complies with Chrome Web Store policies regarding:
-
-* User data transparency
-* Permission disclosure
-* Secure data handling
-* Limited permission usage
-* Privacy disclosure requirements
-
-ReplyAI does not sell personal information or use personal communication data for advertising.
+For privacy questions or data requests, contact the developer through the
+support channel listed on the Chrome Web Store listing for ReplyAI.
