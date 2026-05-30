@@ -12,7 +12,6 @@ ReplyAI provides AI-generated smart reply suggestions for supported messaging we
 ## Permissions
 
 ReplyAI uses:
-- activeTab permission to interact with supported messaging tabs.
 - storage permission to save user preferences locally.
 - Host permissions to run on supported messaging websites.
 
